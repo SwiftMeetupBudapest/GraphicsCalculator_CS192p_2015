@@ -71,13 +71,13 @@ class PlotView: UIView {
     func onPinched(gesture: UIPinchGestureRecognizer) {
         switch gesture.state {
         case .Changed:
-            // Draft mode
+            // Draft mode - draw in bigger steps to be ugly but quick
             scaleStep = 15.0
             drawColor = UIColor.grayColor()
             scale *= gesture.scale
             gesture.scale = 1.0
         case .Ended :
-            scaleStep = 1.0
+            scaleStep = 0
             drawColor = color
             scale *= gesture.scale
             gesture.scale = 1.0
