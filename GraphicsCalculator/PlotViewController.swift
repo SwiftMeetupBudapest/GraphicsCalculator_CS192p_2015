@@ -14,9 +14,16 @@ class PlotViewController: UIViewController, PlotDataSource {
     @IBOutlet weak var plotView: PlotView! {
         didSet {
             plotView.addGestureRecognizer(UIPinchGestureRecognizer(target: plotView, action: "onPinched:"))
+            plotView.addGestureRecognizer(UIPanGestureRecognizer(target: plotView, action: "onPanned:"))
+            let doubleTapRecognizer = UITapGestureRecognizer(target: plotView, action: "onDoubleTapped:")
+            doubleTapRecognizer.numberOfTapsRequired = 2
+            plotView.addGestureRecognizer(doubleTapRecognizer)
+
             plotView.plotDataSource = self
         }
     }
+    
+    var calculatorCache = Dictionary<Double, Double>()
     
     var calculatorBrainProgram : AnyObject = "" {
         didSet {
@@ -29,6 +36,12 @@ class PlotViewController: UIViewController, PlotDataSource {
     var brain = CalculatorBrain()
     var axesDrawer = AxesDrawer()
     
+    override func viewDidLoad() {
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        plotView.axesCenter = CGPoint(x: plotView.bounds.size.width / 2, y: plotView.bounds.size.height / 2)
+    }
     func updateUI() {
         title = brain.description
         plotView?.setNeedsDisplay()
