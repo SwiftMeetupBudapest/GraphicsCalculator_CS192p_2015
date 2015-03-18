@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="LNW-uE-gib" customClass="PlotView" customModule="GraphicsCalculator" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="scale">
@@ -31,10 +31,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottomMargin" secondItem="LNW-uE-gib" secondAttribute="bottom" constant="-64" id="MWv-IL-iC9"/>
-                            <constraint firstItem="LNW-uE-gib" firstAttribute="top" secondItem="kfC-sr-Kh0" secondAttribute="bottom" id="OuJ-Zb-XVM"/>
-                            <constraint firstItem="LNW-uE-gib" firstAttribute="leading" secondItem="OhF-zc-VfF" secondAttribute="leading" id="PWy-G5-Kef"/>
-                            <constraint firstAttribute="trailing" secondItem="LNW-uE-gib" secondAttribute="trailing" id="Tdh-97-zaw"/>
+                            <constraint firstItem="LNW-uE-gib" firstAttribute="bottom" secondItem="SX9-lC-6em" secondAttribute="top" id="1Zl-fW-7yP"/>
+                            <constraint firstAttribute="trailing" secondItem="LNW-uE-gib" secondAttribute="trailing" id="HeS-kO-TRW"/>
+                            <constraint firstItem="LNW-uE-gib" firstAttribute="leading" secondItem="OhF-zc-VfF" secondAttribute="leading" id="WiT-un-aRP"/>
+                            <constraint firstItem="LNW-uE-gib" firstAttribute="top" secondItem="kfC-sr-Kh0" secondAttribute="bottom" id="ob9-qp-TI5"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -51,6 +51,7 @@
         <scene sceneID="OS9-hw-5Wz">
             <objects>
                 <splitViewController id="idq-oD-6vv" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <connections>
                         <segue destination="5AE-1y-o8x" kind="relationship" relationship="detailViewController" id="sEx-VH-Bf0"/>
                         <segue destination="qDO-7u-hgY" kind="relationship" relationship="masterViewController" id="Rzf-gQ-YDB"/>
@@ -465,6 +466,7 @@
         <scene sceneID="zns-FJ-v07">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5AE-1y-o8x" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="lmP-pU-26H">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -481,6 +483,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="jTE-yM-rFP"/>
+        <segue reference="sEx-VH-Bf0"/>
     </inferredMetricsTieBreakers>
 </document>
